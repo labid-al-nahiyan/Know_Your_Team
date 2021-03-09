@@ -1,0 +1,17 @@
+.header{
+    background: url("../../img/field.jfif");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff7c;
+    text-align: center;
+    color: white;
+    padding: 80px;
+}
+.team-detail{
+    background-color: rgb(17, 17, 175);
+    color: white;
+    padding: 20px 10px ;
+    border-radius: 10px;
+    margin: 10px;
+}

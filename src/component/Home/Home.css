@@ -1,0 +1,26 @@
+.home-title{
+    background-image: url("../../img/field.jfif");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    text-align: center;
+    color: white;
+    padding: 80px;
+}
+.team-thumbnil{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px 10px;
+    grid-column-gap: 15px;
+    border: 1px solid red;
+    
+}
+.team-thumbnil-item{
+    
+    background-color: white;
+    place-self: center stretch;
+    padding: 20px 60px;
+    border: 1px solid blue;
+
+}
