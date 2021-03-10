@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row,Col } from 'react-bootstrap';
 import TeamThumbnil from '../TeamThumbnil/TeamThumbnil';
 import './Home.css'
+
+
 const Home = () => {
     const [teams, setTeams] = useState([])
     useEffect(() => {
@@ -14,18 +16,17 @@ const Home = () => {
     return (
         <div>
             <div className="home-title">
-                <h1>See Your TEAM</h1>
+                <h1>Know Your TEAM</h1>
             </div>
             <div style={{backgroundColor:'black'}}>
-                <Container>
-
-                    <div className="team-thumbnil">
+                <Container className="team-thumbnil text-center">
+                    <Row className="mx-5" >
                         {
                             teams.map((team) => {
                                 return <TeamThumbnil team={team} key={team.idTeam}></TeamThumbnil>
                             })
                         }
-                    </div>
+                    </Row>
                 </Container>
             </div>
         </div>

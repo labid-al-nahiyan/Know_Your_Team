@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useParams,browserHistory } from 'react-router';
 import './Team.css'
+import maleTeam from '../../img/male.png'
+import femaleTeam from '../../img/female.png'
+import facebook from "../../img/Facebook.png"
+import twitter from "../../img/Twitter.png"
+import youtube from "../../img/YouTube.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee ,faFlag,faFutbol , faLandmark, faVenusMars } from '@fortawesome/free-solid-svg-icons'
 
 const Team = () => {
     const { id } = useParams()
@@ -17,33 +24,47 @@ const Team = () => {
 
             })
     }, [id])
-    const { intFormedYear, strCountry, strGender, strSport, strTeamBadge, strTeam, strDescriptionEN } = team;
-
+    const { intFormedYear,
+            strCountry,
+            strGender,
+            strSport, 
+            strTeamBadge, 
+            strTeam, 
+            strDescriptionEN,
+            strTwitter,
+            strYoutube ,
+            strFacebook } = team;
+    const Img= strGender==='Male'?maleTeam : femaleTeam
+    console.log({Img},{maleTeam})
+    const ImgStyle={
+        backgroundColor:(Img===maleTeam)?'blue':'red'
+    }
+    
     return (
         <div>
             <div className="header">
                 <img style={{ width: '10rem' }} src={strTeamBadge} alt="" />
             </div>
-            <Container>
-                <Row className="team-detail">
-                    <Col>
+            <Container className="team">
+                <Row className="team-detail" style={ImgStyle}>
+                    <Col sm={12} lg={6}>
                         <div>
                             <h3>{strTeam}</h3>
-                            <p>Founded : {intFormedYear}</p>
-                            <p>Country : {strCountry}</p>
-                            <p>Sports Type : {strSport}</p>
-                            <p>Gender : {strGender}</p>
-                            <p></p>
+                            <p><FontAwesomeIcon icon={faLandmark}/> Founded : {intFormedYear}</p>
+                            <p><FontAwesomeIcon icon={faFlag}/> Country : {strCountry}</p>
+                            <p><FontAwesomeIcon icon={faFutbol} /> Sports Type : {strSport}</p>
+                            <p><FontAwesomeIcon icon={faVenusMars}/> Gender : {strGender}</p>
+                            
                         </div>
                     </Col>
-                    <Col>
-                        <div>
-                            <img src="../../img/male.png" alt="" style={{width : '100%'}}/>
+                    <Col sm={12} lg={6}>
+                        <div className="teamImg">
+                        <img src={Img} alt="" style={{width:'100%'}} />
                         </div>
                     </Col>
                 </Row>
-                <Row>
-                    <Col lg={12}>
+                <Row className="team-discription">
+                    <Col lg={12} >
                         <p>
                             {strDescriptionEN}
                         </p>
@@ -51,13 +72,16 @@ const Team = () => {
                     <Col lg={12}>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sequi sed id eligendi nostrum inventore repellat   soluta, ipsum possimus ut reprehenderit dignissimos sunt, modi, quibusdam repudiandae et rem reiciendis. Placeat?</p>
                     </Col>
-                    
+
                 </Row>
                 <Row>
-                    <div>
-                       <div><img src="../../img/Facebook.png" alt=""/></div>
-                       <div><img src="../../img/Twitter.png" alt=""/></div>
-                    </div>
+                    <Col>
+                        <div className="footer">
+                            <a href={`https://${strFacebook}`} target='_blank' rel="noreferrer"><img src={facebook} alt="" /></a>
+                            <a href={`https://${strTwitter}`} target='_blank' rel="noreferrer"><img src={twitter} alt="" /></a>
+                            <a href={`https://${strYoutube}`} target='_blank' rel="noreferrer"><img src={youtube} alt="" /></a>
+                        </div>
+                    </Col>
                 </Row>
             </Container>
         </div>

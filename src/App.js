@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './component/Home/Home';
 import Team from './component/Team/Team';
+import NoMatch from './component/NoMatch/NoMatch.jsx'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/team/:id">
           <Team></Team>
+        </Route>
+        <Route path="*">
+          <NoMatch></NoMatch>
         </Route>
       </Switch>
     </Router>

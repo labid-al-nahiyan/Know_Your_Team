@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .header{
     background: url("../../img/field.jfif");
     background-size: 100% 100%;
@@ -8,10 +11,35 @@
     color: white;
     padding: 80px;
 }
+.team{
+    background-color: white;
+    padding: 10px;
+}
 .team-detail{
-    background-color: rgb(17, 17, 175);
+    /* background-color: rgb(17, 17, 175); */
     color: white;
     padding: 20px 10px ;
     border-radius: 10px;
     margin: 10px;
+    align-items: center;
+}
+.team-discription{
+    color: white;
+    background-color: rgb(151, 150, 150);
+    padding: 20px 10px ;
+    border-radius: 10px;
+    margin: 10px;
+    align-items: center;
+    
+}
+.teamImg{
+    text-align: end;
+}
+.footer{
+    text-align: center;
+    margin:20px;
+}
+.footer img{
+    height: 50px;
+
 }

@@ -1,4 +1,4 @@
-.home-title{
+.header{
     background-image: url("../../img/field.jfif");
     background-size: 100% 100%;
     background-position: center;
@@ -8,12 +8,8 @@
     color: white;
     padding: 80px;
 }
-.team-thumbnil-item{
-    
+.not-match{
     background-color: white;
-    border-radius: 5px;
-    margin-left: 15px;
-    margin-top: 25px; 
-   padding: 20px;
-
+    padding: 20px;
+    margin: 20px;
 }
